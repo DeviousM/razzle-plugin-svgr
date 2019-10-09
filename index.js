@@ -1,4 +1,6 @@
 "use strict";
+const WebpackConfigHelpers = require("razzle-dev-utils/WebpackConfigHelpers");
+const Helpers = new WebpackConfigHelpers(process.cwd());
 
 const defaultOptions = {
   svgr: {
@@ -32,6 +34,11 @@ module.exports = (
   const config = Object.assign({}, defaultConfig);
 
   const options = Object.assign({}, defaultOptions, userOptions);
+
+  // Exclude from file-loader
+  config.module.rules[
+    config.module.rules.findIndex(Helpers.makeLoaderFinder("file-loader"))
+  ].exclude.push(/\.(svg)$/);
 
   const constantEnv = dev ? "dev" : "prod";
 

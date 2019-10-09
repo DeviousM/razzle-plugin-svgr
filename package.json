@@ -1,6 +1,6 @@
 {
   "name": "razzle-plugin-svgr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SVGR plugin for Razzle",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/DeviousM/razzle-plugin-svgr#readme",
   "dependencies": {
-    "@svgr/webpack": "^4.3.3"
+    "@svgr/webpack": "^4.3.3",
+    "razzle-dev-utils": "^3.0.0"
   }
 }
