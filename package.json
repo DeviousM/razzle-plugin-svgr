@@ -1,0 +1,29 @@
+{
+  "name": "razzle-plugin-svgr",
+  "version": "1.0.0",
+  "description": "SVGR plugin for Razzle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DeviousM/razzle-plugin-svgr.git"
+  },
+  "keywords": [
+    "razzle",
+    "ssr",
+    "react",
+    "svgr",
+    "webpack"
+  ],
+  "author": "Michał Kostrzyński",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeviousM/razzle-plugin-svgr/issues"
+  },
+  "homepage": "https://github.com/DeviousM/razzle-plugin-svgr#readme",
+  "dependencies": {
+    "@svgr/webpack": "^4.3.3"
+  }
+}
