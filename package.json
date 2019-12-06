@@ -1,6 +1,6 @@
 {
   "name": "razzle-plugin-svgr",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "SVGR plugin for Razzle",
   "main": "index.js",
   "scripts": {
