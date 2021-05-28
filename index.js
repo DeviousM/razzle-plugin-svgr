@@ -6,39 +6,24 @@ const defaultOptions = {
   svgr: {
     dev: {
       svgoConfig: {
-        plugins: [
-          { removeViewBox: false },
-          { mergePaths: false },
-          { removeTitle: false }
-        ]
-      }
+        plugins: [{ removeViewBox: false }, { mergePaths: false }, { removeTitle: false }],
+      },
     },
     prod: {
       svgoConfig: {
-        plugins: [
-          { removeViewBox: false },
-          { mergePaths: false },
-          { removeTitle: false }
-        ]
-      }
-    }
-  }
+        plugins: [{ removeViewBox: false }, { mergePaths: false }, { removeTitle: false }],
+      },
+    },
+  },
 };
 
-module.exports = (
-  defaultConfig,
-  { target, dev },
-  webpack,
-  userOptions = {}
-) => {
+module.exports = (defaultConfig, { target, dev }, webpack, userOptions = {}) => {
   const config = Object.assign({}, defaultConfig);
 
   const options = Object.assign({}, defaultOptions, userOptions);
 
   // Exclude from file-loader
-  config.module.rules[
-    config.module.rules.findIndex(Helpers.makeLoaderFinder("file-loader"))
-  ].exclude.push(/\.(svg)$/);
+  config.module.rules[config.module.rules.findIndex(Helpers.makeLoaderFinder("file-loader"))].exclude.push(/\.(svg)$/);
 
   const constantEnv = dev ? "dev" : "prod";
 
@@ -49,10 +34,10 @@ module.exports = (
       use: [
         {
           loader: require.resolve("@svgr/webpack"),
-          options: options.svgr[constantEnv]
-        }
-      ]
-    }
+          options: options.svgr[constantEnv],
+        },
+      ],
+    },
   ];
 
   return config;
